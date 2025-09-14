@@ -17,10 +17,10 @@ function Sidebar() {
           <div className="flex flex-col gap-3">
             <div
               className="relative flex items-center gap-3 pl-3 py-2 text-xs font-medium cursor-pointer
-                border-l-2 border-transparent hover:border-amber-500 hover:bg-gray-900
+                border-l-2 border-transparent hover:border-red-500 hover:bg-gray-900
                 transition-all duration-300 ease-in-out
                 before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-0 
-                before:w-12 before:bg-gradient-to-r before:from-amber-500/60 before:to-transparent 
+                before:w-12 before:bg-gradient-to-r before:from-red-500/60 before:to-transparent 
                 before:opacity-0 hover:before:opacity-60 before:transition-all before:duration-500
                 group"
             >
@@ -32,10 +32,10 @@ function Sidebar() {
 
             <div
               className="relative flex items-center gap-3 pl-3 py-2 text-xs font-medium cursor-pointer
-                border-l-2 border-transparent hover:border-amber-500 hover:bg-gray-900
+                border-l-2 border-transparent hover:border-red-500 hover:bg-gray-900
                 transition-all duration-300 ease-in-out
                 before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-0 
-                before:w-12 before:bg-gradient-to-r before:from-amber-500/60 before:to-transparent 
+                before:w-12 before:bg-gradient-to-r before:from-red-500/60 before:to-transparent 
                 before:opacity-0 hover:before:opacity-60 before:transition-all before:duration-500
                 group"
             >
@@ -46,10 +46,10 @@ function Sidebar() {
             </div>
             <div
               className="relative flex items-center gap-3 pl-3 py-2 text-xs font-medium cursor-pointer
-                border-l-2 border-transparent hover:border-amber-500 hover:bg-gray-900
+                border-l-2 border-transparent hover:border-red-500 hover:bg-gray-900
                 transition-all duration-300 ease-in-out
                 before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-0 
-                before:w-12 before:bg-gradient-to-r before:from-amber-500/60 before:to-transparent 
+                before:w-12 before:bg-gradient-to-r before:from-red-500/60 before:to-transparent 
                 before:opacity-0 hover:before:opacity-60 before:transition-all before:duration-500
                 group"
             >
