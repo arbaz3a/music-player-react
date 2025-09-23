@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "Bachpan",
+    "artist": "Kaavish",
+    "duration": "5:12",
+    "releaseDate": "2009-04-12",
+    "link": "/songs/Kaavish - Bachpan.mp3",
+    "thumbnail": "/playlist1.jpeg"
+  },
+  {
+    "id": 2,
+    "title": "Faaslay",
+    "artist": "Kaavish",
+    "duration": "4:47",
+    "releaseDate": "2012-11-05",
+    "link": "/songs/Kaavish - Faasle (Studio Version).mp3",
+    "thumbnail": "/playlist2.jpeg"
+  },
+  {
+    "id": 3,
+    "title": "Koi Hai To Sahee",
+    "artist": "Kaavish",
+    "duration": "5:20",
+    "releaseDate": "2010-06-15",
+    "link": "/songs/Kaavish - Koi Hai To Sahee.mp3",
+    "thumbnail": "/playlist3.jpeg"
+  },
+  {
+    "id": 4,
+    "title": "Tere Pyaar Main",
+    "artist": "Kaavish",
+    "duration": "4:41",
+    "releaseDate": "2011-09-03",
+    "link": "/songs/Kaavish - Tere Pyaar Main.mp3",
+    "thumbnail": "/playlist4.jpeg"
+  },
+  {
+    "id": 5,
+    "title": "Tou Kya Hua",
+    "artist": "Bayaan",
+    "duration": "4:59",
+    "releaseDate": "2018-12-20",
+    "link": "/songs/Tou Kya Hua - Bayaan.mp3",
+    "thumbnail": "/playlistimage.jpg"
+  }
+]

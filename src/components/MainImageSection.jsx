@@ -1,29 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
+import SongsData from '../api/SongsData.json'
 import { GiPlayButton } from "react-icons/gi";
+import { BsFillPauseFill } from "react-icons/bs";
+import { IoPlayBack, IoPlayForward } from "react-icons/io5";
+
 
 function MainImageSection() {
-  let arr = ["Playlists", "Albums", "Artists", "Streams"];
+
+  const [audiobar, setaudiobar] = useState(60);
+  let arr = ["All Song", "Favourite Song", "Popular Song", "Artists"];
   const arr2 = [
     {
-      image: "playlist1.jpeg",
+      image: "/images/playlist1.jpeg",
       title: "Hip Hop",
       info: "31 tracks · 1h 45m",
       date: "13 June 2024",
     },
     {
-      image: "playlist2.jpeg",
+      image: "/images/playlist2.jpeg",
       title: "Chill Vibes",
       info: "25 tracks · 2h 10m",
       date: "02 July 2024",
     },
     {
-      image: "playlist3.jpeg",
+      image: "/images/playlist3.jpeg",
       title: "Workout Hits",
       info: "40 tracks · 1h 55m",
       date: "28 August 2024",
     },
     {
-      image: "playlist4.jpeg",
+      image: "/images/playlist4.jpeg",
       title: "Lo-Fi Beats",
       info: "20 tracks · 1h 20m",
       date: "10 September 2024",
@@ -36,17 +42,17 @@ function MainImageSection() {
       <div className="flex gap-3 w-full justify-center">
         <img
           className="w-[37%] rounded-2xl object-cover"
-          src="/playlistimage.jpg"
+          src="/images/playlistimage.jpg"
           alt="playlistcard"
         />
         <img
           className="w-[59%] rounded-2xl object-cover"
-          src="/kavishimage2.jpeg"
+          src="/images/kavishimage2.jpeg"
           alt="kavish"
         />
       </div>
 
-      {/* state bar */}
+      {/* state navbar */}
       <div className="mt-7 flex flex-wrap sm:flex-nowrap gap-1 sm:gap-2 md:gap-2.5 h-full text-white px-2 overflow-x-auto">
         {arr.map((label, i) => (
           <div
@@ -97,6 +103,20 @@ function MainImageSection() {
           </div>
         ))}
       </div>
+
+      {/* music play state */}
+      <div className="text-white">
+        <div>
+          <img src="" alt="" />
+        </div>
+        <div>
+          <input className="cursor-pointer" type="range" value={audiobar} onChange={(e)=>setaudiobar(e.target.value)}/>
+          <IoPlayBack />  
+          <BsFillPauseFill/>
+          <IoPlayForward />
+        </div>
+      </div>
+
     </div>
   );
 }

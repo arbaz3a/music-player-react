@@ -26,7 +26,7 @@ function Navbar() {
         </button>
         <img
           className="rounded-full border-2 p-1 border-amber-500 w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 object-cover cursor-pointer"
-          src="/images.png"
+          src="/images/images.png"
           alt="profile"
         />
       </div>
