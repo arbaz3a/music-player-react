@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import SongsData from '../api/SongsData.json'
 import { GiPlayButton } from "react-icons/gi";
-import { BsFillPauseFill } from "react-icons/bs";
-import { IoPlayBack, IoPlayForward } from "react-icons/io5";
+
 
 
 function MainImageSection() {
 
-  const [audiobar, setaudiobar] = useState(60);
   let arr = ["All Song", "Favourite Song", "Popular Song", "Artists"];
   const arr2 = [
     {
@@ -102,19 +100,6 @@ function MainImageSection() {
             <GiPlayButton className="text-xl text-white cursor-pointer hover:text-amber-600" />
           </div>
         ))}
-      </div>
-
-      {/* music play state */}
-      <div className="text-white">
-        <div>
-          <img src="" alt="" />
-        </div>
-        <div>
-          <input className="cursor-pointer" type="range" value={audiobar} onChange={(e)=>setaudiobar(e.target.value)}/>
-          <IoPlayBack />  
-          <BsFillPauseFill/>
-          <IoPlayForward />
-        </div>
       </div>
 
     </div>
