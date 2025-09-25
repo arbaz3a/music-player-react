@@ -1,47 +1,92 @@
 [
   {
     "id": 1,
-    "title": "Bachpan",
-    "artist": "Kaavish",
-    "duration": "5:12",
-    "releaseDate": "2009-04-12",
-    "link": "/songs/Kaavish - Bachpan.mp3",
-    "thumbnail": "/playlist1.jpeg"
+    "title": "Apocalypse",
+    "artist": "Cigarettes After Sex",
+    "duration": "4:50",
+    "releaseDate": "2017-05-09",
+    "link": "/songs/Apocalypse - Cigarettes After Sex.mp3",
+    "thumbnail": "/images/cigaftersex.jpg"
   },
   {
     "id": 2,
-    "title": "Faaslay",
-    "artist": "Kaavish",
-    "duration": "4:47",
-    "releaseDate": "2012-11-05",
-    "link": "/songs/Kaavish - Faasle (Studio Version).mp3",
-    "thumbnail": "/playlist2.jpeg"
+    "title": "Baat Unkahi",
+    "artist": "Samra Khan",
+    "duration": "4:12",
+    "releaseDate": "2015-12-15",
+    "link": "/songs/Kaavish - Baat Unkahi feat. Samra Khan.mp3",
+    "thumbnail": "/images/batunkahi.jpg"
   },
   {
     "id": 3,
-    "title": "Koi Hai To Sahee",
+    "title": "Bachpan",
     "artist": "Kaavish",
     "duration": "5:20",
-    "releaseDate": "2010-06-15",
-    "link": "/songs/Kaavish - Koi Hai To Sahee.mp3",
-    "thumbnail": "/playlist3.jpeg"
+    "releaseDate": "2008-01-01",
+    "link": "/songs/Kaavish - Bachpan.mp3",
+    "thumbnail": "/images/bachpan.jpg"
   },
   {
     "id": 4,
-    "title": "Tere Pyaar Main",
+    "title": "Faasle (Studio Version)",
     "artist": "Kaavish",
-    "duration": "4:41",
-    "releaseDate": "2011-09-03",
-    "link": "/songs/Kaavish - Tere Pyaar Main.mp3",
-    "thumbnail": "/playlist4.jpeg"
+    "duration": "5:30",
+    "releaseDate": "2010-01-01",
+    "link": "/songs/Kaavish - Faasle (Studio Version).mp3",
+    "thumbnail": "/images/faasle.jpg"
   },
   {
     "id": 5,
+    "title": "Koi Hai To Sahee",
+    "artist": "Kaavish",
+    "duration": "4:45",
+    "releaseDate": "2010-01-01",
+    "link": "/songs/Kaavish - Koi Hai To Sahee.mp3",
+    "thumbnail": "/images/koihaitusahi.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Tere Naam",
+    "artist": "Kaavish",
+    "duration": "5:10",
+    "releaseDate": "2010-01-01",
+    "link": "/songs/Kaavish - Tere Naam.mp3",
+    "thumbnail": "/images/terynaam.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Tere Pyaar Main",
+    "artist": "Kaavish",
+    "duration": "5:00",
+    "releaseDate": "2010-01-01",
+    "link": "/songs/Kaavish - Tere Pyaar Main.mp3",
+    "thumbnail": "/images/terepyarmain.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Night Changes",
+    "artist": "One Direction",
+    "duration": "3:46",
+    "releaseDate": "2014-11-14",
+    "link": "/songs/One Direction - Night Changes.mp3",
+    "thumbnail": "/images/onedirectionnightchange.jpg"
+  },
+  {
+    "id": 9,
     "title": "Tou Kya Hua",
     "artist": "Bayaan",
     "duration": "4:59",
     "releaseDate": "2018-12-20",
     "link": "/songs/Tou Kya Hua - Bayaan.mp3",
-    "thumbnail": "/playlistimage.jpg"
+    "thumbnail": "/images/tohkyahova.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Down",
+    "artist": "Tujamo",
+    "duration": "3:15",
+    "releaseDate": "2017-01-20",
+    "link": "/songs/Tujamo - Down (Official Music Video).mp3",
+    "thumbnail": "/images/tujamodown.jpg"
   }
 ]

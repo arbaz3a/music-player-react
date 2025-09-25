@@ -3,7 +3,7 @@ import { BsFillPauseFill, BsFillPlayFill } from "react-icons/bs";
 import { IoPlayBack, IoPlayForward } from "react-icons/io5";
 
 function RightSidebar() {
-  const [audiobar, setaudiobar] = useState(30);
+  const [audiobar, setaudiobar] = useState(5);
 
   return (
     <div className="h-screen flex flex-col items-center justify-center mt-7 bg-gray-800 rounded-xl text-white p-4">
@@ -37,15 +37,19 @@ function RightSidebar() {
       {/* musics all controls */}
       <div className="flex items-center justify-center space-x-6 mt-6">
         <button className="p-3 rounded-full bg-gray-800 hover:bg-gray-700">
-          <IoPlayBack size={28} />
+          <IoPlayBack size={12} />
         </button>
         <button className="p-4 rounded-full bg-amber-500 hover:bg-amber-400">
-          <BsFillPauseFill size={30} />
+          <BsFillPauseFill size={16} />
+        </button>
+        <button className="p-4 rounded-full bg-amber-500 hover:bg-amber-400">
+          <BsFillPlayFill size={16} />
         </button>
         <button className="p-3 rounded-full bg-gray-800 hover:bg-gray-700">
-          <IoPlayForward size={28} />
+          <IoPlayForward size={12} />
         </button>
       </div>
+      
     </div>
   );
 }
