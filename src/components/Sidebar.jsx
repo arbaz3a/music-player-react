@@ -12,7 +12,7 @@ import {
 function Sidebar() {
   return (
     <>
-        <div className="text-gray-300 md:w-[16%] sm:w-[14%] w-[12%] h-screen mt-7 flex flex-col gap-6 pr-2">
+        <div className="text-gray-300 md:w-[16%] sm:w-[14%] w-[12%] mt-7 flex flex-col gap-6 pr-2">
           {/* top section */}
           <div className="flex flex-col gap-3">
             <div

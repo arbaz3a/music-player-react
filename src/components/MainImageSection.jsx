@@ -1,38 +1,26 @@
-import React from "react";
-import SongsData from '../api/SongsData.json'
-import { GiPlayButton } from "react-icons/gi";
-
-
+import React, { useContext } from "react";
+import SongsData from "../api/SongsData.json";
+import { BsFillPauseFill, BsFillPlayFill } from "react-icons/bs";
+import { ContextFunction } from "../context/context";
 
 function MainImageSection() {
+  const { setindex, index, isplaying, toggleplaybtn } =
+    useContext(ContextFunction);
 
-  let arr = ["All Song", "Favourite Song", "Popular Song", "Artists"];
-  const arr2 = [
-    {
-      image: "/images/playlist1.jpeg",
-      title: "Hip Hop",
-      info: "31 tracks · 1h 45m",
-      date: "13 June 2024",
-    },
-    {
-      image: "/images/playlist2.jpeg",
-      title: "Chill Vibes",
-      info: "25 tracks · 2h 10m",
-      date: "02 July 2024",
-    },
-    {
-      image: "/images/playlist3.jpeg",
-      title: "Workout Hits",
-      info: "40 tracks · 1h 55m",
-      date: "28 August 2024",
-    },
-    {
-      image: "/images/playlist4.jpeg",
-      title: "Lo-Fi Beats",
-      info: "20 tracks · 1h 20m",
-      date: "10 September 2024",
-    },
-  ];
+  const handlePlayClick = (id) => {
+    if (index === id - 1) {
+      toggleplaybtn();
+    } else {
+      setindexByID(id);
+      toggleplaybtn();
+    }
+  };
+
+  const setindexByID = (id) => {
+    setindex(id - 1);
+  };
+
+  let arr = ["All Song", "Favourite Song", "Artists", "About"];
 
   return (
     <div className="mt-2 py-2.5 w-full">
@@ -71,37 +59,66 @@ function MainImageSection() {
       </div>
 
       {/* playlist part */}
-      <div className="border-2 border-t-amber-800 border-transparent text-white p-2 mt-2">
-        {arr2.map((label, i) => (
-          <div key={i} className="flex items-center gap-4 mb-3 hover:bg-gray-900 cursor-pointer transition-all duration-300 ease-in-out">
-            {/* image and name  */}
-            <div className="flex items-center gap-3 w-56 sm:w-70">
-              <div className="w-[40px] h-[40px] rounded-full overflow-hidden sm:w-[32px] sm:h-[32px] flex-shrink-0">
-                <img
-                  className="w-full h-full object-cover"
-                  src={label.image}
-                  alt={`${label.title} cover`}
-                />
+      <div className="border-2 border-t-amber-800 border-transparent text-white p-2 mt-2 h-47 overflow-y-auto rounded-md">
+        {SongsData.map((label) => (
+          <div
+            key={label.id}
+            className="flex items-center justify-between mb-3 transition-all duration-300 ease-in-out"
+          >
+            {/* left section of div song */}
+            <div
+              onClick={() => setindexByID(label.id)}
+              className={`flex items-center gap-4 flex-1 cursor-pointer rounded-md px-2 py-1 ${
+                index === label.id - 1 ? "bg-gray-900" : "hover:bg-gray-900"
+              }`}
+            >
+              {/* image and name  */}
+              <div className="flex items-center gap-3 w-56 sm:w-70">
+                <div className="w-[40px] h-[40px] rounded-full overflow-hidden sm:w-[32px] sm:h-[32px] flex-shrink-0">
+                  <img
+                    className="w-full h-full object-cover"
+                    src={label.thumbnail}
+                    alt={`${label.title} cover`}
+                  />
+                </div>
+                <p className="font-semibold text-base sm:text-sm truncate">
+                  {label.title}
+                </p>
               </div>
-              <p className="font-semibold text-base sm:text-sm truncate">
-                {label.title}
-              </p>
+              {/* info and date */}
+              <div className="flex-1 min-w-0 grid grid-cols-2 items-center gap-4">
+                <p className="text-xs text-gray-300 hidden md:block truncate">
+                  {label.duration}
+                </p>
+                <p className="text-xs text-gray-400 hidden md:block truncate">
+                  {label.releaseDate}
+                </p>
+              </div>
             </div>
-            {/* info and date */}
-            <div className="flex-1 min-w-0 grid grid-cols-2 items-center gap-4">
-              <p className="text-xs text-gray-300 hidden md:block truncate">
-                {label.info}
-              </p>
-              <p className="text-xs text-gray-400 hidden md:block truncate">
-                {label.date}
-              </p>
-            </div>
+
+            {/* right section of div */}
             {/* play button */}
-            <GiPlayButton className="text-xl text-white cursor-pointer hover:text-amber-600" />
+            <div className="ml-3 ">
+              {index === label.id - 1 && isplaying ? (
+                <BsFillPauseFill
+                  className="text-xl text-amber-700 cursor-pointer"
+                  onClick={() => handlePlayClick(label.id)}
+                />
+              ) : (
+                <BsFillPlayFill
+                  className={`text-xl cursor-pointer ${
+                    index === label.id - 1
+                      ? "text-amber-700"
+                      : "text-white hover:text-amber-700"
+                  }`}
+                  onClick={() => handlePlayClick(label.id)}
+                />
+              )}
+            </div>
           </div>
         ))}
       </div>
-
+      
     </div>
   );
 }
