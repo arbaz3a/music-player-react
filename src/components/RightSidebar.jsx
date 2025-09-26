@@ -1,11 +1,12 @@
-import React, {useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { BsFillPauseFill, BsFillPlayFill } from "react-icons/bs";
 import { IoPlayBack, IoPlayForward } from "react-icons/io5";
 import SongsData from "../api/SongsData.json";
 import { ContextFunction } from "../context/context";
 
 function RightSidebar() {
-  const {index, setindex, isplaying, songref, toggleplaybtn} = useContext(ContextFunction)
+  const { index, setindex, isplaying, songref, toggleplaybtn } =
+    useContext(ContextFunction);
   const [progressbar, setProgressbar] = useState(0);
   const songObjectIndex = SongsData[index]; // song object array index
 
@@ -57,21 +58,25 @@ function RightSidebar() {
       />
 
       {/* song image */}
-      <div className="w-60 h-60 rounded-2xl overflow-hidden shadow-lg">
+      <div className="h-auto w-auto rounded-2xl overflow-hidden shadow-lg">
         <img
           src={songObjectIndex.thumbnail}
           alt={songObjectIndex.title}
-          className="w-full h-full object-cover"
+          className="w-28 h-28 sm:w-40 sm:h-40 md:w-60 md:h-60 object-cover"
         />
       </div>
 
       {/* song info like author and title of song */}
       <div className="text-center mt-4">
-        <h2 className="text-xl font-semibold">{songObjectIndex.title}</h2>
-        <p className="text-gray-400 text-sm">{songObjectIndex.artist}</p>
+        <h2 className="text-xs sm:text-xl md:text-2xl font-semibold">
+          {songObjectIndex.title}
+        </h2>
+        <p className="text-gray-400 text-sm sm:text-sm md:text-base">
+          {songObjectIndex.artist}
+        </p>
       </div>
 
-      {/* prograss bar */}
+      {/* progress bar */}
       <div className="w-full mt-4">
         <input
           type="range"
@@ -79,36 +84,35 @@ function RightSidebar() {
           max="100"
           value={progressbar}
           onChange={handleUpdation}
-          className="w-full accent-amber-400 cursor-pointer"
+          className="w-full accent-amber-400 cursor-pointer h-2 rounded-lg"
         />
       </div>
 
       {/* music all controls */}
-      <div className="flex items-center justify-center space-x-6 mt-6">
+      <div className="flex items-center justify-center md:space-x-5 sm:space-x-2 mt-6">
         <button
-          className="p-3 rounded-full bg-gray-800 hover:bg-gray-700 hover:cursor-pointer"
+          className="md:p-2 p-1 rounded-full bg-gray-800 hover:bg-gray-700 hover:cursor-pointer"
           onClick={playPrevious}
         >
-          <IoPlayBack size={12} />
+          <IoPlayBack className="w-2 h-2 sm:w-3 sm:h-3 md:w-5 md:h-5" />
         </button>
         <button
-          className="p-4 rounded-full bg-amber-500 hover:bg-amber-400 hover:cursor-pointer"
+          className="p-2 rounded-full bg-amber-500 hover:bg-amber-400 hover:cursor-pointer"
           onClick={toggleplaybtn}
         >
           {isplaying ? (
-            <BsFillPauseFill size={16} />
+            <BsFillPauseFill className="w-2 h-2 sm:w-4 sm:h-4 md:w-7 md:h-7" />
           ) : (
-            <BsFillPlayFill size={16} />
+            <BsFillPlayFill className="w-2 h-2 sm:w-4 sm:h-4 md:w-7 md:h-7" />
           )}
         </button>
         <button
-          className="p-3 rounded-full bg-gray-800 hover:bg-gray-700 hover:cursor-pointer"
+          className="md:p-2 p-1 rounded-full bg-gray-800 hover:bg-gray-700 hover:cursor-pointer"
           onClick={playNext}
         >
-          <IoPlayForward size={12} />
+          <IoPlayForward className="w-2 h-2  sm:w-3 sm:h-3 md:w-5 md:h-5" />
         </button>
       </div>
-      
     </div>
   );
 }
