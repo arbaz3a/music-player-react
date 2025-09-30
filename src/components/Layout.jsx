@@ -3,6 +3,8 @@ import { ContextFunction } from "../context/context";
 import Sidebar from "./Sidebar";
 import MainImageSection from "./MainImageSection";
 import RightSidebar from "./RightSidebar";
+import { Outlet } from "react-router-dom";
+import Navbar from "./Navbar";
 
 function Layout() {
   const [index, setindex] = useState(0);
@@ -20,22 +22,34 @@ function Layout() {
     setisplaying(!isplaying);
   };
 
-
   return (
     <>
-      <ContextFunction.Provider value={{isplaying, setisplaying, index, setindex, songref, toggleplaybtn}}>
+      <ContextFunction.Provider
+        value={{
+          isplaying,
+          setisplaying,
+          index,
+          setindex,
+          songref,
+          toggleplaybtn,
+        }}
+      >
+        <Navbar />
         <div className="flex w-full h-auto">
           {/* left sidebar */}
           <Sidebar />
 
           {/* hero section */}
           <div className="flex-1 px-4">
-            <MainImageSection/>
+            <MainImageSection />
+            <div>
+              <Outlet />
+            </div>
           </div>
 
           {/* right sidebar */}
           <div className="w-[20%]">
-            <RightSidebar/>
+            <RightSidebar />
           </div>
         </div>
       </ContextFunction.Provider>
