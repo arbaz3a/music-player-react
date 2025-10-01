@@ -6,7 +6,7 @@ import {
 import Layout from "./components/Layout";
 import AllSongs from "./components/AllSongs";
 import About from "./components/About";
-import FavouriteSongs from "./components/FavouriteSongs";
+import Equalizer from "./components/Equalizer";
 import Artists from "./components/Artists";
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
       children: [
         { path: "/", element: <Navigate to="/allsongs" replace /> },
         { path: "allsongs", element: <AllSongs /> },
-        { path: "favourites", element: <FavouriteSongs /> },
+        { path: "songstats", element: <Equalizer /> },
         { path: "artists", element: <Artists /> },
         { path: "about", element: <About /> },
       ],
