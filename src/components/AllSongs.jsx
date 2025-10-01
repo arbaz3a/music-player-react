@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import SongsData from "../api/SongsData.json";
 import { ContextFunction } from "../context/context";
 import { BsFillPauseFill, BsFillPlayFill } from "react-icons/bs";
@@ -22,7 +22,7 @@ function AllSongs() {
   return (
     <div>
       {/* playlist part */}
-      <div className="border-2 border-t-amber-800 border-transparent text-white p-2 mt-2 h-47 overflow-y-auto rounded-md">
+      <div className="border-2 border-t-amber-800 border-transparent text-white p-2 mt-2 h-30 overflow-y-auto rounded-md">
         {SongsData.map((label) => (
           <div
             key={label.id}
