@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function MainImageSection() {
   let arr = [
@@ -27,19 +27,25 @@ function MainImageSection() {
       {/* state navbar */}
       <div className="mt-7 flex flex-wrap sm:flex-nowrap gap-1 sm:gap-2 md:gap-2.5 h-full text-white px-2 overflow-x-auto">
         {arr.map((item, i) => (
-          <Link
+          <NavLink
             key={i}
             to={item.path}
-            className="relative flex items-center text-[10px] sm:text-xs font-mono
-      border-t-2 border-transparent hover:border-red-500 hover:bg-gray-900
-      transition-all duration-300 ease-in-out px-2 sm:px-3 pb-1.5
-      before:content-[''] before:absolute before:left-0 before:right-0 before:top-0
-      before:h-6 before:bg-gradient-to-b before:from-red-500/60 before:to-transparent
-      before:opacity-0 hover:before:opacity-60 before:transition-all before:duration-500
-      group whitespace-nowrap pt-3 text-white hover:text-red-500"
+            className={({ isActive }) =>
+              `relative flex items-center text-[10px] sm:text-xs font-mono
+     border-t-2 transition-all duration-300 ease-in-out px-2 sm:px-3 pb-1.5
+     before:content-[''] before:absolute before:left-0 before:right-0 before:top-0
+     before:h-6 before:bg-gradient-to-b before:from-red-500/60 before:to-transparent
+     before:opacity-0 before:transition-all before:duration-500
+     group whitespace-nowrap pt-3
+     ${
+       isActive
+         ? "border-red-500 text-red-500 bg-gray-900 before:opacity-60"
+         : "border-transparent text-white hover:border-red-500 hover:text-red-500 hover:bg-gray-900 hover:before:opacity-60"
+     }`
+            }
           >
             {item.label}
-          </Link>
+          </NavLink>
         ))}
       </div>
     </div>
