@@ -5,7 +5,6 @@ function MainImageSection() {
   let arr = [
     { label: "All Songs", path: "allsongs" },
     { label: "Song Stats", path: "songstats" },
-    { label: "Artists", path: "artists" },
     { label: "About", path: "about" },
   ];
   return (

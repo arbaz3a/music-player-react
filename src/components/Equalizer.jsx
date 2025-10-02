@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useContext } from "react";
 import { ContextFunction } from "../context/context";
 
-// Globals survive route changes
 let audioContext = null;
 let analyser = null;
 let sourceNode = null;

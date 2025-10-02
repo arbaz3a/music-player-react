@@ -7,7 +7,6 @@ import Layout from "./components/Layout";
 import AllSongs from "./components/AllSongs";
 import About from "./components/About";
 import Equalizer from "./components/Equalizer";
-import Artists from "./components/Artists";
 
 function App() {
   const router = createBrowserRouter([
@@ -19,7 +18,6 @@ function App() {
         { path: "/", element: <Navigate to="/allsongs" replace /> },
         { path: "allsongs", element: <AllSongs /> },
         { path: "songstats", element: <Equalizer /> },
-        { path: "artists", element: <Artists /> },
         { path: "about", element: <About /> },
       ],
     },

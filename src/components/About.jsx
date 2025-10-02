@@ -9,8 +9,8 @@ function About() {
           About Music Player
         </h1>
         <p className="text-sm">
-          A simple React music player to play, pause, and switch songs smoothly
-          in the browser.
+          A simple React music player to play, pause, songs stats bars, and
+          switch songs smoothly in the browser.
         </p>
         <h2 className="text-lg text-red-500">Features</h2>
         <ul className="text-sm list-disc list-inside">
