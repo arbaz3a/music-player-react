@@ -1,12 +1,18 @@
-# React + Vite
+## About This Project  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**React Music Player** is a modern and responsive web application built with React. It allows users to play, pause, skip forward/backward, and manage songs with a clean interface. The app uses React Router for navigation, Context API for global state management, and also includes a real-time equalizer for a better experience. With a smooth design and responsive layout, this project shows how to build a full-featured music player using React concepts.  
 
-Currently, two official plugins are available:
+## Local Setup  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Clone Repository**  
+   ```bash
+   git clone https://github.com/arbaz3a/music-player-react.git
+2. Navigate into Project
+    cd music-player-react
+3. Install Dependencies
+    npm install
+4. Start Development Server
+    npm run dev
+5. Open in Browser
+    http://localhost:5173
+    
