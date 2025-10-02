@@ -8,11 +8,15 @@
    ```bash
    git clone https://github.com/arbaz3a/music-player-react.git
 2. Navigate into Project
+   ```bash
     cd music-player-react
-3. Install Dependencies
-    npm install
-4. Start Development Server
-    npm run dev
-5. Open in Browser
-    http://localhost:5173
+4. Install Dependencies
+   ```bash
+   npm install
+6. Start Development Server
+   ```bash
+   npm run dev
+8. Open in Browser
+   ```bash
+   http://localhost:5173
     
