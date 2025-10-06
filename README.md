@@ -6,10 +6,10 @@
 
 1. **Clone Repository**  
    ```bash
-   git clone https://github.com/arbaz3a/music-player-react.git
+   git clone "paste repo link here"
 2. Navigate into Project
    ```bash
-    cd music-player-react
+    cd "folder name here"
 4. Install Dependencies
    ```bash
    npm install
