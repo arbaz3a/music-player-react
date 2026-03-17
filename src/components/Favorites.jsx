@@ -3,11 +3,10 @@ import SongsData from "../api/SongsData.json";
 import { ContextFunction } from "../context/context";
 import SongTable from "./SongTable";
 
-function AllSongs() {
-  const { searchQuery = "" } = useContext(ContextFunction);
+function Favorites() {
+  const { searchQuery = "", favorites = [] } = useContext(ContextFunction);
 
-  const filteredSongs = SongsData.filter((song) => {
-    if (!song) return false;
+  const filteredSongs = SongsData.filter(song => favorites.includes(song.id)).filter((song) => {
     const query = searchQuery.toLowerCase();
     return (
       song.title.toLowerCase().includes(query) ||
@@ -18,16 +17,15 @@ function AllSongs() {
   return (
     <div className="mt-8 mb-4 flex flex-col h-full bg-gray-900/50 rounded-xl p-4 sm:p-6 backdrop-blur-sm border border-gray-800/50">
       <div className="flex items-center justify-between mb-4 px-2">
-        <h2 className="text-xl sm:text-2xl font-bold text-white tracking-wide">All Songs</h2>
+        <h2 className="text-xl sm:text-2xl font-bold text-white tracking-wide">Your Favourites</h2>
       </div>
       <SongTable
         songs={filteredSongs}
-        showAddToPlaylist={true}
-        emptyTitle="No songs found."
-        emptySubtitle="Try searching for a different artist or title."
+        emptyTitle="No favourite songs found."
+        emptySubtitle="Click the heart icon on any song to save it here."
       />
     </div>
   );
 }
 
-export default AllSongs;
+export default Favorites;

@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { ContextFunction } from "../context/context";
 import {
   FiHome,
   FiList,
@@ -7,102 +9,130 @@ import {
   FiClock,
   FiCalendar,
   FiRadio,
+  FiPlus,
 } from "react-icons/fi";
 
 function Sidebar() {
+  const { playlists, createPlaylist } = useContext(ContextFunction);
+  const [isCreating, setIsCreating] = useState(false);
+  const [newPlaylistName, setNewPlaylistName] = useState("");
+  const navigate = useNavigate();
+
+  const handleCreatePlaylist = (e) => {
+    e.preventDefault();
+    if (newPlaylistName.trim()) {
+      createPlaylist(newPlaylistName);
+      setNewPlaylistName("");
+      setIsCreating(false);
+    }
+  };
+  const getNavLinkClass = ({ isActive }) =>
+    `relative flex items-center gap-4 px-4 md:px-6 py-2.5 text-sm font-medium cursor-pointer transition-all duration-300 ease-in-out group rounded-r-lg border-l-[3px] ` +
+    (isActive
+      ? "border-amber-500 bg-gray-800 text-white"
+      : "border-transparent hover:border-amber-500 hover:bg-gray-900 text-gray-400");
+
+  const getIconClass = ({ isActive }) =>
+    `text-lg transition-colors duration-300 ` +
+    (isActive ? "text-amber-500" : "text-gray-400 group-hover:text-amber-500");
+
+  const getTextClass = ({ isActive }) =>
+    `hidden md:inline transition-colors duration-300 ` +
+    (isActive ? "text-white" : "group-hover:text-white");
+
   return (
-    <>
-        <div className="text-gray-300 md:w-[16%] sm:w-[14%] w-[12%] mt-7 flex flex-col gap-6 pr-2">
-          {/* top section */}
-          <div className="flex flex-col gap-3">
-            <div
-              className="relative flex items-center gap-3 pl-3 py-2 text-xs font-medium cursor-pointer
-                border-l-2 border-transparent hover:border-red-500 hover:bg-gray-900
-                transition-all duration-300 ease-in-out
-                before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-0 
-                before:w-12 before:bg-gradient-to-r before:from-red-500/60 before:to-transparent 
-                before:opacity-0 hover:before:opacity-60 before:transition-all before:duration-500
-                group"
-            >
-              <FiHome className="md:ml-5 text-white group-hover:text-red-500 transition-colors duration-300" />
-              <span className="hidden sm:inline text-white group-hover:text-red-500 transition-colors duration-300">
-                Feed
-              </span>
-            </div>
+    <div className="w-20 md:w-40 lg:w-48 mt-7 flex flex-col gap-8 pb-8 pr-2">
+      {/* top section */}
+      <div className="flex flex-col gap-2">
+        <NavLink to="/allsongs" className={getNavLinkClass}>
+          {({ isActive }) => (
+            <>
+              <FiHome className={getIconClass({ isActive })} />
+              <span className={getTextClass({ isActive })}>Home</span>
+            </>
+          )}
+        </NavLink>
 
-            <div
-              className="relative flex items-center gap-3 pl-3 py-2 text-xs font-medium cursor-pointer
-                border-l-2 border-transparent hover:border-red-500 hover:bg-gray-900
-                transition-all duration-300 ease-in-out
-                before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-0 
-                before:w-12 before:bg-gradient-to-r before:from-red-500/60 before:to-transparent 
-                before:opacity-0 hover:before:opacity-60 before:transition-all before:duration-500
-                group"
-            >
-              <FiList className="md:ml-5 text-white group-hover:text-red-500 transition-colors duration-300" />
-              <span className="hidden sm:inline text-white group-hover:text-red-500 transition-colors duration-300">
-                Playlists
-              </span>
-            </div>
-            <div
-              className="relative flex items-center gap-3 pl-3 py-2 text-xs font-medium cursor-pointer
-                border-l-2 border-transparent hover:border-red-500 hover:bg-gray-900
-                transition-all duration-300 ease-in-out
-                before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-0 
-                before:w-12 before:bg-gradient-to-r before:from-red-500/60 before:to-transparent 
-                before:opacity-0 hover:before:opacity-60 before:transition-all before:duration-500
-                group"
-            >
-              <FiBarChart2 className="md:ml-5 text-white group-hover:text-red-500 transition-colors duration-300" />
-              <span className="hidden sm:inline text-white group-hover:text-red-500 transition-colors duration-300">
-                Statistics
-              </span>
-            </div>
-          </div>
+        <NavLink to="/statistics" className={getNavLinkClass}>
+          {({ isActive }) => (
+            <>
+              <FiBarChart2 className={getIconClass({ isActive })} />
+              <span className={getTextClass({ isActive })}>Statistics</span>
+            </>
+          )}
+        </NavLink>
+      </div>
 
-          {/* middle section */}
-          <div className="flex flex-col gap-2">
-            <p className="hidden md:block text-xs text-gray-500 uppercase px-3 mb-1">
-              Your Music
-            </p>
-            <div className="flex items-center gap-3 pl-3 py-2 border-l-2 text-xs border-transparent hover:border-lime-200 hover:bg-gray-900 text-white font-medium cursor-pointer">
-              <FiHeart className="md:ml-5" />
-              <span className="hidden sm:inline">Favourites</span>
-            </div>
-            <div className="flex items-center gap-3 pl-3 py-2 border-l-2 text-xs border-transparent hover:border-lime-200 hover:bg-gray-900 text-white font-medium cursor-pointer">
-              <FiClock className="md:ml-5" />
-              <span className="hidden sm:inline">Listen Later</span>
-            </div>
-            <div className="flex items-center gap-3 pl-3 py-2 border-l-2 text-xs border-transparent hover:border-lime-200 hover:bg-gray-900 text-white font-medium cursor-pointer">
-              <FiCalendar className="md:ml-5" />
-              <span className="hidden sm:inline">History</span>
-            </div>
-            <div className="flex items-center gap-3 pl-3 py-2 border-l-2 text-xs border-transparent hover:border-lime-200 hover:bg-gray-900 text-white font-medium cursor-pointer">
-              <FiRadio className="md:ml-5" />
-              <span className="hidden sm:inline">Podcasts</span>
-            </div>
-          </div>
+      {/* middle section */}
+      <div className="flex flex-col gap-2">
+        <p className="hidden md:block text-xs font-semibold text-gray-500 tracking-wider uppercase px-4 md:px-6 mb-2">
+          Your Music
+        </p>
 
-          {/* bottom section */}
-          <div className="flex flex-col gap-2">
-            <p className="hidden md:block text-xs text-gray-500 uppercase px-3 mb-1">
-              Your Playlists
-            </p>
-            <div className="flex items-center gap-3 border-l-2 pl-3 border-transparent hover:border-fuchsia-700 hover:bg-gray-900 py-2 text-xs text-white font-medium cursor-pointer">
-              <span className="md:ml-5 w-2 h-2 bg-red-500 rounded-full"></span>
-              <span className="hidden sm:inline">Mono</span>
-            </div>
-            <div className="flex items-center gap-3 border-l-2 border-transparent hover:border-fuchsia-700 hover:bg-gray-900 pl-3 py-2 text-xs text-white font-medium cursor-pointer">
-              <span className="md:ml-5 w-2 h-2 bg-green-500 rounded-full"></span>
-              <span className="hidden sm:inline">Xapt</span>
-            </div>
-            <div className="flex items-center gap-3 border-l-2 pl-3 border-transparent hover:border-fuchsia-700 hover:bg-gray-900 py-2 text-xs text-white font-medium cursor-pointer">
-              <span className="md:ml-5 w-2 h-2 bg-gray-700 rounded-full"></span>
-              <span className="hidden sm:inline">Franz</span>
-            </div>
-          </div>
+        <NavLink to="/favorites" className={getNavLinkClass}>
+          {({ isActive }) => (
+            <>
+              <FiHeart className={getIconClass({ isActive })} />
+              <span className={getTextClass({ isActive })}>Favourites</span>
+            </>
+          )}
+        </NavLink>
+
+        <NavLink to="/history" className={getNavLinkClass}>
+          {({ isActive }) => (
+            <>
+              <FiCalendar className={getIconClass({ isActive })} />
+              <span className={getTextClass({ isActive })}>History</span>
+            </>
+          )}
+        </NavLink>
+      </div>
+
+      {/* bottom section */}
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center justify-between px-4 md:px-6 mb-2">
+          <p className="hidden md:block text-xs font-semibold text-gray-500 tracking-wider uppercase">
+            Your Playlists
+          </p>
+          <button
+            onClick={() => setIsCreating(true)}
+            className="text-gray-400 hover:text-white transition-colors p-1 rounded-full hover:bg-gray-800"
+            title="Create Playlist"
+          >
+            <FiPlus />
+          </button>
         </div>
-    </>
+
+        {isCreating && (
+          <form onSubmit={handleCreatePlaylist} className="px-4 md:px-6 mb-2">
+            <input
+              type="text"
+              value={newPlaylistName}
+              onChange={(e) => setNewPlaylistName(e.target.value)}
+              placeholder="Playlist name..."
+              className="w-full bg-gray-900 text-white text-sm px-3 py-1.5 rounded-md border border-gray-700 outline-none focus:border-amber-500 transition-colors"
+              autoFocus
+              onBlur={() => setIsCreating(false)}
+            />
+          </form>
+        )}
+
+        {playlists.map((playlist) => (
+          <div
+            key={playlist.id}
+            onClick={() => navigate(`/playlist/${playlist.id}`)}
+            className="flex items-center gap-4 px-4 md:px-6 py-2 border-l-[3px] border-transparent hover:border-amber-500 hover:bg-gray-900 rounded-r-lg text-sm font-medium cursor-pointer group transition-all duration-300"
+          >
+            <span
+              className={`w-2.5 h-2.5 ${playlist.color} rounded-full group-hover:scale-125 transition-transform shrink-0 ml-1`}
+            ></span>
+            <span className="hidden md:inline text-gray-400 group-hover:text-white transition-colors pl-1 truncate max-w-[100px]">
+              {playlist.name}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 

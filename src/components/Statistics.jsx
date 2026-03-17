@@ -5,7 +5,7 @@ let audioContext = null;
 let analyser = null;
 let sourceNode = null;
 
-export default function Equalizer() {
+export default function Statistics() {
   const { songref, isplaying } = useContext(ContextFunction);
   const barsRef = useRef([]);
   const animationRef = useRef(null);

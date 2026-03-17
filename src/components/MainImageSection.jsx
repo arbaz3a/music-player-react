@@ -4,7 +4,9 @@ import { NavLink } from "react-router-dom";
 function MainImageSection() {
   let arr = [
     { label: "All Songs", path: "allsongs" },
-    { label: "Song Stats", path: "songstats" },
+    { label: "Favourites", path: "favorites" },
+    { label: "History", path: "history" },
+    { label: "Statistics", path: "statistics" },
     { label: "About", path: "about" },
   ];
   return (

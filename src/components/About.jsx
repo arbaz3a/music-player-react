@@ -9,13 +9,24 @@ function About() {
           About Music Player
         </h1>
         <p className="text-sm">
-          A simple React music player to play, pause, songs stats bars, and
-          switch songs smoothly in the browser.
+          A modern React music player with a rich feature set play, pause, skip
+          tracks, manage playlists, and explore your listening stats, all in a
+          sleek responsive UI.
         </p>
-        <h2 className="text-lg text-red-500">Features</h2>
-        <ul className="text-sm list-disc list-inside">
-          <li>Play & pause songs</li>
-          <li>Switch easily between tracks & Responsive design</li>
+        <h2 className="text-lg text-red-500 mt-3">Features</h2>
+        <ul className="text-sm list-disc list-inside space-y-1">
+          <li>Play, pause & skip songs with smooth transitions</li>
+          <li>Create, manage & delete custom playlists</li>
+          <li>Add songs to playlists from any view</li>
+          <li>Favourite songs with one-click heart toggle</li>
+          <li>Listening history tracking (Recently Played)</li>
+          <li>Real-time search across songs & artists</li>
+          <li>Song statistics & analytics dashboard</li>
+          <li>Volume control with mute toggle</li>
+          <li>Progress bar with seek functionality</li>
+          <li>Fully responsive desktop, tablet & mobile</li>
+          <li>Mobile bottom navigation & expandable search</li>
+          <li>Persistent data via localStorage</li>
         </ul>
       </div>
 
@@ -23,12 +34,18 @@ function About() {
       <div>
         <h1 className="text-xl font-bold text-red-500 mb-2">About Developer</h1>
         <p className="text-sm mb-2">
-          Hi, I’m <span className="font-semibold text-cyan-400">Arbaz</span>, a
-          BSCS student building projects using{" "}
+          Hi, I'm <span className="font-semibold text-cyan-400">Arbaz</span>, a
+          BSCS student passionate about building full-stack applications and
+          exploring AI/ML. I work with{" "}
           <span className="font-semibold text-cyan-400">
-            C++, JavaScript, HTML, CSS, and React
+            Python, JavaScript, React, Node.js, Express, MongoDB, MySQL, C++,
+            HTML & CSS
           </span>{" "}
-          to enhance my skills.
+          and have hands-on experience with{" "}
+          <span className="font-semibold text-cyan-400">
+            Artificial Intelligence & Machine Learning
+          </span>
+          .
         </p>
         <div className="flex gap-6 justify-center items-center mt-4">
           <a

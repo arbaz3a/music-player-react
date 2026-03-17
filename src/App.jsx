@@ -5,8 +5,11 @@ import {
 } from "react-router-dom";
 import Layout from "./components/Layout";
 import AllSongs from "./components/AllSongs";
+import Favorites from "./components/Favorites";
+import History from "./components/History";
 import About from "./components/About";
-import Equalizer from "./components/Equalizer";
+import Statistics from "./components/Statistics";
+import PlaylistView from "./components/PlaylistView";
 
 function App() {
   const router = createBrowserRouter([
@@ -17,7 +20,10 @@ function App() {
       children: [
         { path: "/", element: <Navigate to="/allsongs" replace /> },
         { path: "allsongs", element: <AllSongs /> },
-        { path: "songstats", element: <Equalizer /> },
+        { path: "favorites", element: <Favorites /> },
+        { path: "history", element: <History /> },
+        { path: "playlist/:id", element: <PlaylistView /> },
+        { path: "statistics", element: <Statistics /> },
         { path: "about", element: <About /> },
       ],
     },
